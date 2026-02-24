@@ -1,0 +1,74 @@
+# =============================================================================
+# AgentKit Forge — Always-regenerate outputs
+# Pure AI tool configs. Regenerated every sync, never edit directly.
+# Edit .agentkit/spec/ or .agentkit/overlays/ instead.
+# =============================================================================
+/.claude/
+/.cursor/
+/.windsurf/
+/.ai/
+/mcp/
+/.github/workflows/ai-framework-ci.yml
+
+# Generated AI instruction files (always regenerated)
+/CLAUDE.md
+/UNIFIED_AGENT_TEAMS.md
+/AGENT_TEAMS.md
+/QUALITY_GATES.md
+/RUNBOOK_AI.md
+
+# =============================================================================
+# Scaffold-once outputs — commit these after first sync
+# Generated as starting points, then owned by your project. Sync will NOT
+# overwrite them once they exist. Edit freely.
+# =============================================================================
+# /AGENT_BACKLOG.md        ← project work tracking
+# /docs/                   ← project documentation
+# /SECURITY.md             ← project security policy
+# /CONTRIBUTING.md         ← project contributing guide
+# /CHANGELOG.md            ← project changelog
+# /MIGRATIONS.md           ← project migration notes
+# /.github/ISSUE_TEMPLATE/ ← issue templates
+# /.github/PULL_REQUEST_TEMPLATE.md
+# /.github/copilot-instructions.md
+# /.github/instructions/   ← domain-specific copilot rules
+# /.vscode/                ← editor settings & extensions
+# /.editorconfig           ← cross-editor formatting
+# /.prettierrc             ← prettier config
+# /.markdownlint.json      ← markdown linting rules
+
+# =============================================================================
+# Runtime & dependencies
+# =============================================================================
+node_modules/
+
+# Agentkit internal
+.agentkit/.tmp/
+.agentkit/.bak/
+.agentkit/logs/*
+!.agentkit/logs/.gitkeep
+
+# Repo identity marker (created by init)
+.agentkit-repo
+
+# =============================================================================
+# OS & IDE
+# =============================================================================
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+*.iml
+
+# =============================================================================
+# Runtime state (generated at runtime, not by sync)
+# =============================================================================
+.claude-state/
+
+# =============================================================================
+# AgentKit internal generated files
+# =============================================================================
+.agentkit/.manifest.json
+.agentkit/package-lock.json
