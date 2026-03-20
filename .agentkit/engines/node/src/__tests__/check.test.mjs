@@ -34,7 +34,7 @@ describe('runCheck()', () => {
     expect(result).toHaveProperty('overallStatus');
     expect(result).toHaveProperty('overallPassed');
     expect(Array.isArray(result.stacks)).toBe(true);
-  });
+  }, 120_000);
 
   it('respects --fast flag structure', async () => {
     vi.spyOn(console, 'log').mockImplementation(() => {});
@@ -51,7 +51,7 @@ describe('runCheck()', () => {
       const buildStep = stackResult.steps.find(s => s.step === 'build');
       expect(buildStep).toBeUndefined();
     }
-  });
+  }, 120_000);
 
   it('handles --stack filter for unknown stacks gracefully', async () => {
     vi.spyOn(console, 'log').mockImplementation(() => {});

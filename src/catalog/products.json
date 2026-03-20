@@ -1,0 +1,143 @@
+{
+  "catalog": {
+    "store": {
+      "name": "Cashbuild Kwa Thema",
+      "address": "Shop 7 Shoprite Shabangu Centre, 10525 Shabangu Street, Gugulethu, KwaThema 1575 Gauteng",
+      "delivery": 200.0
+    },
+    "lastUpdated": "2026-03-20",
+    "currency": "ZAR",
+    "products": [
+      {
+        "id": 1,
+        "name": "Powafix Powacoat Waterproof And Membrane 5L Charcoal",
+        "category": "waterproofing",
+        "price": 192.95,
+        "unit": "each",
+        "coverage": "Roof leak waterproofing"
+      },
+      {
+        "id": 2,
+        "name": "Champion High Gloss Enamel 5L Black",
+        "category": "paint",
+        "subcategory": "enamel",
+        "price": 427.95,
+        "unit": "each",
+        "coverage": "Metal surfaces — burglar bars, gates"
+      },
+      {
+        "id": 3,
+        "name": "Champion High Gloss Enamel 5L White",
+        "category": "paint",
+        "subcategory": "enamel",
+        "price": 379.95,
+        "unit": "each",
+        "coverage": "Metal/wood surfaces — window frames"
+      },
+      {
+        "id": 4,
+        "name": "Champion Extra Thick PVA 20L Winters Boy",
+        "category": "paint",
+        "subcategory": "pva",
+        "price": 429.95,
+        "unit": "each",
+        "volume": "20L",
+        "coverage": "Top coat — exterior + interior walls"
+      },
+      {
+        "id": 5,
+        "name": "Duram Flexikote And Free Mesh 5L Ivory",
+        "category": "waterproofing",
+        "price": 199.95,
+        "unit": "each",
+        "coverage": "Shower waterproofing — walls + ceiling"
+      },
+      {
+        "id": 6,
+        "name": "Powafix Sugar Soap 1L",
+        "category": "preparation",
+        "price": 54.95,
+        "unit": "each",
+        "coverage": "Wall wash/degrease before painting"
+      },
+      {
+        "id": 7,
+        "name": "Universal Direct SABS PVC 20mm",
+        "category": "plumbing",
+        "price": 27.95,
+        "unit": "each",
+        "coverage": "PVC pipe fittings"
+      },
+      {
+        "id": 8,
+        "name": "Powafix Waterproofing Membrane 100mm x 10M",
+        "category": "waterproofing",
+        "price": 29.95,
+        "unit": "each",
+        "coverage": "Joint waterproofing membrane tape"
+      },
+      {
+        "id": 9,
+        "name": "Rhinolite Multipurpose 40KG",
+        "category": "preparation",
+        "price": 373.95,
+        "unit": "each",
+        "coverage": "Plastering and skimming"
+      },
+      {
+        "id": 10,
+        "name": "Earth Leakage DIN Rail 63A Double Pole",
+        "category": "electrical",
+        "subcategory": "protection",
+        "price": 477.95,
+        "unit": "each",
+        "specs": "63A, 30mA sensitivity, double pole, DIN rail mount"
+      },
+      {
+        "id": 11,
+        "name": "Circuit Breaker DIN Rail 10A",
+        "category": "electrical",
+        "subcategory": "breaker",
+        "price": 62.95,
+        "unit": "each",
+        "specs": "10A, 6kA, single pole, DIN rail mount"
+      },
+      {
+        "id": 12,
+        "name": "Distribution Board PVC Flush DIN Rail 8 Way",
+        "category": "electrical",
+        "subcategory": "distribution",
+        "price": 269.95,
+        "unit": "each",
+        "specs": "8 module, PVC flush mount, DIN rail"
+      },
+      {
+        "id": 13,
+        "name": "Circuit Breaker DIN Rail 20A",
+        "category": "electrical",
+        "subcategory": "breaker",
+        "price": 62.95,
+        "unit": "each",
+        "specs": "20A, 6kA, single pole, DIN rail mount"
+      },
+      {
+        "id": 14,
+        "name": "Circuit Breaker DIN Rail 40A",
+        "category": "electrical",
+        "subcategory": "breaker",
+        "price": 62.95,
+        "unit": "each",
+        "specs": "40A, 6kA, single pole, DIN rail mount"
+      },
+      {
+        "id": 15,
+        "name": "Circuit Breaker DIN Rail 32A",
+        "category": "electrical",
+        "subcategory": "breaker",
+        "price": 62.95,
+        "unit": "each",
+        "specs": "32A, 6kA, single pole, DIN rail mount"
+      }
+    ]
+  }
+}
