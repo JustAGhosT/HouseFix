@@ -17,6 +17,48 @@ Cashbuild's existing Bill of Materials tool (powered by GoBuild360) follows a ri
 4. **Refine Your List** — adjust products, swap alternatives
 5. **Download PDF or Buy Products** — add to cart, arrange delivery
 
+### What the Current Tool Produces
+
+Using the "Tiling a Wall (Area)" template with 10 m² input and 2 installers, the BOM tool generates a three-section output:
+
+**Section 1 — Wall Tiling Materials (R3,096.40):**
+
+| Product | Calculated Qty | Unit Price | Total |
+|---------|---------------|------------|-------|
+| Wall Tile Meteor 250x400 1.7m² Bone | 8 packs (14 m²) | R190.95 | R1,527.60 |
+| Saza Ceramic 24 Hour Tile Adhesive 20kg | 3 bags (48 kg) | R37.95 | R113.85 |
+| Ezee Tile Grout 5kg | 1 bag (4 kg) | R64.95 | R64.95 |
+| Tile Spacers 2mm | 1 pack (30 pcs) | R27.95 | R27.95 |
+| Fokox Tile Edge Trim Ivory 2mm | 9 packs (32 m) | R29.95 | R269.55 |
+| Labour: Tiling | 10 m² | R109.25 | R1,092.50 |
+
+**Section 2 — Tiling Tools (R2,381.10):**
+
+| Product | Qty (×2 installers) | Unit Price | Total |
+|---------|---------------------|------------|-------|
+| Wheelbarrow Economy Economy64 | 2 | R519.95 | R1,039.90 |
+| Tape Measure 3 Meter | 2 | R47.95 | R95.90 |
+| Academy Lines Protective Household Gloves | 2 | R32.95 | R65.90 |
+| Fokox Grout Squeegee | 2 | R62.95 | R125.90 |
+| Fokox Floor Applicator Plastic | 2 | R8.50 | R17.00 |
+| Fokox Cutting Wheel 450/500mm | 2 | R84.95 | R169.90 |
+| Fokox Tile Nipper | 2 | R174.95 | R349.90 |
+| Fokox Floor Applicator Plastic (adhesive) | 2 | R8.50 | R17.00 |
+| Fokox Wall Trowel Steel | 2 | R69.95 | R139.90 |
+| Fokox Knee Pads | 2 | R154.95 | R309.90 |
+| Fokox Cleaning Sponge | 2 | R24.95 | R49.90 |
+
+**Grand Total Breakdown:**
+
+| Category | Amount |
+|----------|--------|
+| Tools | R2,381.10 |
+| Labour | R1,042.50 |
+| Materials | R2,053.98 |
+| **Grand total** | **R5,477.58** |
+
+Actions available: **Download PDF** | **Select products to order** | **Save project**
+
 ### Limitations of the Current Approach
 
 - **Requires domain knowledge:** Users must know which template to pick before they start. A homeowner who says "my bathroom has damp and the paint is peeling" doesn't know if they need "Paint Interior Walls", "Waterproofing", or both.
@@ -24,6 +66,9 @@ Cashbuild's existing Bill of Materials tool (powered by GoBuild360) follows a ri
 - **No conversational context:** Can't ask "what kind of surface is this?" or "do you need primer for new plaster vs repainting?"
 - **No application guidance:** Generates a product list but doesn't tell you what order to apply things, drying times, or surface prep steps.
 - **No iterative refinement through dialogue:** Swapping products requires navigating back through the template form, not a natural "actually, make the first coat white instead of grey."
+- **Tool duplication:** The BOM assumes every installer needs their own full set of tools (2 wheelbarrows for 2 tilers?). No intelligence about which tools are shared vs individual.
+- **No product alternatives:** Each line item has a "Manage products" button, but no proactive suggestions for cheaper alternatives or better-rated options.
+- **Single-template scope:** If your project spans painting + tiling + waterproofing, you must run three separate templates and manually combine the results. No cross-template awareness.
 
 ---
 
@@ -75,22 +120,64 @@ The AI collapses steps 1-2 into a single conversation. Users don't need to know 
 
 ## "Show Me" Artifact Specification
 
-The interactive artifact follows the same pattern as Claude's "show me how compound interest works" — a self-contained, interactive visualization with inputs and live-calculated outputs.
+The interactive artifact follows the same pattern as Claude's "show me how compound interest works" — a self-contained, interactive visualization with inputs and live-calculated outputs. The user says "show me what I need to tile my bathroom wall" and gets a fully interactive BOM calculator.
 
 ### Input Controls (Sliders/Dropdowns)
 
+The artifact renders context-appropriate inputs based on the project type. Examples:
+
+**For painting projects:**
+
 | Control | Type | Range | Default |
 |---------|------|-------|---------|
-| Wall area to paint | Slider | 5-200 m² | 50 m² |
+| Wall area | Slider | 5-200 m² | 50 m² |
 | Number of coats | Dropdown | 1, 2, 3 | 2 |
 | Ceiling area | Slider | 0-100 m² | 20 m² |
-| Number of rooms | Stepper | 1-10 | 3 |
 | Surface type | Dropdown | New plaster, Repaint, Face brick | Repaint |
-| Paint type (walls) | Dropdown | PVA, Acrylic, Enamel | PVA |
 | First coat color | Color picker | White, Light Grey, Custom | White |
 | Top coat color | Color picker | Winters Grey, Charcoal, Custom | Winters Grey |
 | Include waterproofing | Toggle | Yes/No | No |
-| Store location | Dropdown | Cashbuild branches | Kwa Thema |
+| Number of workers | Stepper | 1-5 | 1 |
+
+**For tiling projects:**
+
+| Control | Type | Range | Default |
+|---------|------|-------|---------|
+| Wall/floor area | Slider | 1-100 m² | 10 m² |
+| Tile size | Dropdown | 250×400, 300×300, 600×600 | 250×400 |
+| Spacer width | Dropdown | 1mm, 2mm, 3mm, 5mm | 2mm |
+| Include edge trim | Toggle | Yes/No | Yes |
+| Number of installers | Stepper | 1-5 | 2 |
+| Own tools already | Toggle | Yes/No | No |
+
+### Three-Section Output (Matching Cashbuild Structure)
+
+The AI artifact mirrors Cashbuild's proven three-section breakdown but adds intelligence:
+
+**Section 1 — Materials** (with progress bar)
+- Product name, calculated quantity, unit price, line total
+- Each product has a "swap" action (AI suggests alternatives on click)
+- Waste allowance shown as separate line item (e.g., "+15% for cuts")
+
+**Section 2 — Tools** (with intelligence)
+- Separates **shared tools** (1 wheelbarrow for the team) from **per-worker tools** (gloves, knee pads)
+- "Already own" toggle per tool to exclude from cost
+- Tool quality tier selector: Economy | Standard | Professional
+
+**Section 3 — Labour**
+- Rate per m² based on project type
+- Adjustable installer count
+- Estimated days to complete
+
+**Grand Total Summary** (live-updating cards):
+
+| Category | Amount |
+|----------|--------|
+| Materials | R___ |
+| Tools | R___ |
+| Labour | R___ |
+| Delivery | R___ |
+| **Grand total** | **R___** |
 
 ### Calculated Outputs (Live-Updating)
 
@@ -98,34 +185,63 @@ The interactive artifact follows the same pattern as Claude's "show me how compo
 |--------|-------------|
 | Paint volume (first coat) | Wall area × coverage rate (8-10 m²/L for PVA) |
 | Paint volume (top coat) | Wall area × coats × coverage rate |
-| Number of tubs needed | Volume ÷ tub size (20L), rounded up |
-| Primer/sealer needed | Based on surface type |
-| Prep materials | Sugar soap, filler, sandpaper — based on surface condition |
-| Total cost | Sum of all products at Cashbuild prices |
+| Number of tubs/bags needed | Volume ÷ product size, rounded up |
+| Tile quantity | Area ÷ tile coverage per pack, + waste % |
+| Adhesive quantity | Area × kg per m², rounded to bag size |
+| Grout quantity | Based on tile size, gap width, area |
+| Total cost | Sum of all sections at Cashbuild prices |
 
 ### Visual Elements
 
-- **Product table:** Each product with quantity, unit price, line total
-- **Summary cards:** Subtotal | Delivery | Total (mirroring Cashbuild cart layout)
-- **Color preview:** Swatch strip showing first coat → top coat → trim colors
-- **Application timeline:** Visual step-by-step order with icons (prep → prime → coat → finish)
-- **Coverage diagram:** Simple wall graphic showing painted vs unpainted area as slider moves
+- **Product table:** Three collapsible sections (Materials, Tools, Labour) — each with its own subtotal and progress bar, matching Cashbuild's layout
+- **Summary cards:** Materials | Tools | Labour | Delivery | Grand Total
+- **Color preview:** Swatch strip showing first coat → top coat → trim (painting projects)
+- **Tile preview:** Grid pattern showing tile layout with grout lines (tiling projects)
+- **Application timeline:** Visual step-by-step order with icons and estimated time
+- **Cost pie chart:** Visual breakdown of where the money goes (materials vs tools vs labour)
+- **Smart alerts:** "Did you know? You probably only need 1 wheelbarrow for 2 tilers" / "Edge trim seems high — do all walls need it?"
+
+### Improvement Over Cashbuild's Static Output
+
+| Cashbuild BOM | AI Artifact |
+|---------------|-------------|
+| Static table, recalculates only on page reload | Live-updating as sliders move |
+| "Manage products" button per item — opens new view | Inline swap suggestions with price comparison |
+| 2 wheelbarrows for 2 tilers (no shared tool logic) | Distinguishes shared vs per-worker tools |
+| Separate templates for painting + tiling | Single artifact handles multi-scope projects |
+| No application guidance | Built-in step-by-step timeline |
+| PDF download only | PDF + shareable link + direct cart export |
+| No cost optimization suggestions | "Save R519.95 by sharing one wheelbarrow" |
 
 ---
 
 ## Key Features
 
 ### 1. Conversational Intake
-No template selection needed. The AI identifies the project scope from natural language and maps it to the right product categories.
+No template selection needed. The AI identifies the project scope from natural language and maps it to the right product categories. A single conversation can span what would require running "Paint Exterior Walls", "Paint Interior Walls", "Waterproofing", and "Tiling a Wall" as four separate Cashbuild templates.
 
 ### 2. Interactive Artifacts
-Claude's "show me" capability renders rich, interactive UIs — sliders for measurements, live-updating cost tables, visual checklists. This replaces Cashbuild's static form-based input.
+Claude's "show me" capability renders rich, interactive UIs — sliders for measurements, live-updating cost tables, visual checklists. This replaces Cashbuild's static form-based input while keeping the proven three-section output structure (Materials, Tools, Labour) that users already understand.
 
 ### 3. Product Matching
-Requirements map to actual Cashbuild SKUs with real prices from the catalog. The AI knows product specifications (coverage rates, drying times, compatibility).
+Requirements map to actual Cashbuild SKUs with real prices. Examples from validated projects:
+- Wall Tile Meteor 250x400 1.7m² Bone @ R190.95/pack
+- Saza Ceramic 24 Hour Tile Adhesive 20kg @ R37.95/bag
+- Mackay Contractor PVA 20L White @ R257.95
+- Champion Extra Thick PVA 20L Winters Grey @ R432.95
 
-### 4. Application Guidance
+### 4. Smart Tool Logic
+Cashbuild's BOM multiplies every tool by number of installers (2 tilers = 2 wheelbarrows = R1,039.90). The AI distinguishes:
+- **Shared tools** (1 wheelbarrow, 1 tile cutter, 1 tile nipper) — buy once
+- **Per-worker tools** (gloves, knee pads, trowels) — buy per installer
+- **Already owned** — toggle off tools you have, reduces total
+
+Estimated savings on the 10 m² tiling example: ~R900 on tools alone.
+
+### 5. Application Guidance
 Sequenced step-by-step instructions that Cashbuild's BOM tool doesn't provide:
+
+**Painting project:**
 1. Sugar soap wash all surfaces
 2. Fill cracks, dry, sand smooth
 3. Apply waterproofing where needed
@@ -134,15 +250,37 @@ Sequenced step-by-step instructions that Cashbuild's BOM tool doesn't provide:
 6. Enamel on metalwork (burglar bars, window frames)
 7. Cleanup with thinners
 
-### 5. Store Awareness
-Knows which Cashbuild store to target, what's in stock, delivery costs, and opening hours.
+**Tiling project:**
+1. Prepare substrate (level, clean, prime if needed)
+2. Dry-lay tiles to plan cuts and layout
+3. Mix adhesive, apply with notched trowel
+4. Set tiles with spacers, check level frequently
+5. Allow 24 hours cure time
+6. Grout joints, clean excess with sponge
+7. Apply edge trim at exposed edges
+8. Final cleanup
 
-### 6. Iterative Refinement
+### 6. Store Awareness
+Knows which Cashbuild store to target, delivery costs (R200 for Kwa Thema), and groups the shopping list by store aisle/section.
+
+### 7. Iterative Refinement
 Change anything through conversation:
-- "Swap the grey first coat for white"
+- "Can I use a white first coat? And the more expensive grey for the top coat."
 - "Add tiling materials for the bathroom"
 - "Remove the roof repair items, I'll do that later"
 - "What if I do 3 coats instead of 2?"
+- "I already own a wheelbarrow and tile cutter"
+- "What's a cheaper tile option?"
+
+### 8. Cross-Template Intelligence
+The AI handles multi-scope projects as a single conversation. For the HouseFix project, this meant combining:
+- Exterior painting (would be "Paint Exterior Walls" template)
+- Bathroom painting (would be "Paint Interior Walls" template)
+- Shower waterproofing (would be "Waterproofing" template)
+- Roof leak repair (no matching template exists)
+- Surface prep (not a template — assumed knowledge)
+
+Result: One unified shopping list of 10 items at R2,992.45 instead of running 3-4 separate templates and manually de-duplicating.
 
 ---
 
@@ -163,6 +301,25 @@ The HouseFix project validates this approach. Through conversation, the AI:
 - **First coat:** Mackay Contractor PVA 20L **White** (sealer) — changed from Light Grey
 - **Top coat:** Champion Extra Thick PVA 20L **Winters Grey** (the more expensive option)
 - **Bathroom ceiling:** White (matches rest of house) — simplified from Light Grey
+
+### Comparison: Cashbuild BOM vs AI for Same Project
+
+**Cashbuild approach** (for just the tiling portion, 10 m²):
+- Must select "Tiling a Wall (Area)" template
+- Enter 10 m² and 2 installers
+- Gets R5,477.58 total (Materials R2,053.98 + Tools R2,381.10 + Labour R1,042.50)
+- Includes 2 wheelbarrows (R1,039.90) — one per installer
+- No guidance on prep, application order, or what to do with leftover adhesive
+- Would need to run separate templates for painting and waterproofing
+
+**AI approach** (for the full project — painting + waterproofing + roof + prep):
+- Described the project in natural language over a conversation
+- Got a unified plan covering 5+ categories that would require separate Cashbuild templates
+- Total: R2,992.45 for all painting, waterproofing, and prep materials
+- Included application order, product compatibility advice, and iterative refinement
+- Changed first coat color mid-conversation — no need to restart
+
+The AI doesn't just replicate the BOM — it acts as a knowledgeable advisor who catches issues (like buying 2 wheelbarrows) and connects tasks that Cashbuild's templates treat as separate projects.
 
 ---
 
