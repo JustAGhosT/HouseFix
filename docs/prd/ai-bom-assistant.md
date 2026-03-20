@@ -400,7 +400,8 @@ The AI doesn't just replicate the BOM — it acts as a knowledgeable advisor who
 **Phase 1 — Local Product Catalog (Immediate)**
 
 - JSON product catalog seeded from existing Cashbuild cart data (`src/catalog/products.json`)
-- Model: `{ id, name, category, price, unit, store, lastUpdated }`
+- Top-level catalog object with `store`, `lastUpdated`, `currency`, and a `products` array
+- Per-product model: `{ id, name, category, price, unit }`
 - Powers the AI BOM assistant without external dependencies
 - Prices manually updated from store visits or website checks
 

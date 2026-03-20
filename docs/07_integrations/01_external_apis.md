@@ -32,15 +32,15 @@ Cashbuild's website (cashbuild.co.za) runs on **PrestaShop**, which has a built-
 
 #### Endpoints Available (if enabled)
 
-| Method | Path                                     | Purpose                          |
-| ------ | ---------------------------------------- | -------------------------------- |
-| GET    | `/api/products?output_format=JSON`       | Full product catalog             |
-| GET    | `/api/products/{id}`                     | Single product details           |
-| GET    | `/api/products/{id}?price[x][use_tax]=1` | Product with tax-inclusive price |
-| GET    | `/api/categories`                        | Product categories               |
-| GET    | `/api/stock_availables`                  | Inventory/stock levels           |
-| POST   | `/api/carts`                             | Create a shopping cart           |
-| POST   | `/api/orders`                            | Place an order                   |
+| Method | Path                                 | Purpose                          |
+| ------ | ------------------------------------ | -------------------------------- |
+| GET    | `/products?output_format=JSON`       | Full product catalog             |
+| GET    | `/products/{id}`                     | Single product details           |
+| GET    | `/products/{id}?price[x][use_tax]=1` | Product with tax-inclusive price |
+| GET    | `/categories`                        | Product categories               |
+| GET    | `/stock_availables`                  | Inventory/stock levels           |
+| POST   | `/carts`                             | Create a shopping cart           |
+| POST   | `/orders`                            | Place an order                   |
 
 #### How to Get Access
 
