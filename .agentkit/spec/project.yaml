@@ -13,39 +13,39 @@
 # =============================================================================
 
 # Project identity
-name: null # e.g. "chaufher", "phoenix", "my-api"
-description: null # Short project description
-phase: null # greenfield | active | maintenance | legacy
+name: housefix
+description: AI-powered Bill of Materials assistant for South African home renovations
+phase: active # greenfield | active | maintenance | legacy
 
 # Tech stack (auto-detected + confirmed at init)
 stack:
-  languages: [] # e.g. [typescript, csharp, python]
+  languages: [typescript]
   frameworks:
-    frontend: [] # e.g. [next.js, react]
-    backend: [] # e.g. [asp.net-core, express]
+    frontend: [] # planned: [react, vite]
+    backend: [express]
     css: [] # e.g. [tailwind, sass]
-  orm: null # e.g. ef-core, prisma, drizzle, sqlalchemy
-  database: [] # e.g. [postgresql, redis]
+  orm: drizzle
+  database: [sqlite]
   search: null # e.g. elasticsearch, meilisearch
   messaging: [] # e.g. [signalr, rabbitmq]
 
 # Architecture
 architecture:
-  pattern: null # clean | hexagonal | mvc | microservices | monolith | serverless
-  apiStyle: null # rest | graphql | grpc | mixed
+  pattern: monolith
+  apiStyle: rest
   monorepo: false
   monorepoTool: null # turborepo | nx | lerna | pnpm-workspaces
 
 # Existing documentation & specs
 documentation:
-  hasPrd: false
-  prdPath: null # e.g. docs/prd/
-  hasAdr: false
-  adrPath: null # e.g. docs/adr/
-  hasApiSpec: false
-  apiSpecPath: null # e.g. docs/api/openapi/
-  hasTechnicalSpec: false
-  technicalSpecPath: null
+  hasPrd: true
+  prdPath: docs/prd/
+  hasAdr: true
+  adrPath: docs/03_architecture/03_decisions/
+  hasApiSpec: true
+  apiSpecPath: docs/02_specs/03_api_spec.md
+  hasTechnicalSpec: true
+  technicalSpecPath: docs/02_specs/02_technical_spec.md
   hasDesignSystem: false
   designSystemPath: null # e.g. packages/ui/
   storybook: false
@@ -101,26 +101,24 @@ compliance:
 
 # Process & conventions
 process:
-  branchStrategy: null # trunk-based | github-flow | gitflow
-  commitConvention: null # conventional | semantic | none
-  codeReview: null # required-pr | optional | none
-  teamSize: null # solo | small | medium | large
+  branchStrategy: github-flow
+  commitConvention: conventional
+  codeReview: required-pr
+  teamSize: solo
 
 # Testing strategy
 testing:
-  unit: [] # e.g. [vitest, xunit]
+  unit: [vitest]
   integration: [] # e.g. [playwright]
-  e2e: [] # e.g. [playwright, cypress]
+  e2e: [] # planned: [playwright]
   coverage: null # Target coverage percentage (0-100)
 
 # External integrations (helps agents understand system boundaries)
-# Uncomment and add entries to describe external system boundaries:
-# integrations:
-#   - name: Azure AD B2C
-#     purpose: authentication
-#   - name: PayFast
-#     purpose: payments
-integrations: []
+integrations:
+  - name: Claude API
+    purpose: conversational BOM calculation (tool-use with search_products, calculate_bom)
+  - name: Cashbuild
+    purpose: product catalog and pricing (web scraping via Playwright)
 
 # Cross-cutting concerns (project-specific decisions agents must follow)
 crosscutting:
@@ -145,14 +143,14 @@ crosscutting:
     patterns: [] # e.g. [cache-aside, write-through]
     distributedCache: false
   api:
-    versioning: null # url-segment | header | query-string | media-type | none
-    pagination: null # cursor | offset | keyset | none
-    responseFormat: null # envelope | raw | json-api | hal
+    versioning: url-segment
+    pagination: offset
+    responseFormat: envelope
     rateLimiting: false
   database:
-    migrations: null # code-first | sql-scripts | auto | none
-    seeding: false
-    transactionStrategy: null # unit-of-work | per-request | manual | none
+    migrations: code-first
+    seeding: true
+    transactionStrategy: manual
     connectionPooling: false
   performance:
     bundleBudget: null # KB limit for frontend bundles
@@ -161,6 +159,6 @@ crosscutting:
   featureFlags:
     provider: null # launchdarkly | azure-app-config | unleash | flagsmith | custom | none
   environments:
-    naming: [] # e.g. [dev, staging, prod]
-    configStrategy: null # env-vars | config-files | vault | app-config | none
-    envFilePattern: null # e.g. .env.example
+    naming: [dev, prod]
+    configStrategy: env-vars
+    envFilePattern: .env.example
