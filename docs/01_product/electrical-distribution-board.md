@@ -37,12 +37,12 @@ The house has an existing distribution board that needs replacing with a modern 
 | # | Item | Qty | Price |
 |---|------|-----|-------|
 | 1 | Distribution Board PVC Flush DIN Rail 8 Way | 1 | R269.95 |
-| 2 | Earth Leakage DIN Rail 63A Double Pole | 1 | R354.95 |
+| 2 | Earth Leakage DIN Rail 63A Double Pole | 1 | R477.95 |
 | 3 | Circuit Breaker DIN Rail 10A (lights) | 1 | R62.95 |
 | 4 | Circuit Breaker DIN Rail 20A (plugs) | 3 | R188.85 |
 | 5 | Circuit Breaker DIN Rail 40A (stove) | 1 | R62.95 |
 | 6 | Circuit Breaker DIN Rail 32A (geyser) | 1 | R62.95 |
-| | **Electrical Subtotal** | | **R1,002.60** |
+| | **Electrical Subtotal** | | **R1,125.60** |
 
 ---
 
