@@ -20,15 +20,27 @@ Shop 7 Shoprite Shabangu Centre, 10525 Shabangu Street, Gugulethu, KwaThema 1575
 | 9 | Powafix Multi Filla - All Purpose Crack Filler (large) | 1 | Fill big wall cracks before painting | R59.95 |
 | 10 | Flasharry Vala Inthonsi Kit 1L | 1 | Roof leak spot repair kit | R77.95 |
 
+### Electrical — Distribution Board Replacement
+
+| # | Item | Qty | Use | Price |
+|---|------|-----|-----|-------|
+| 11 | Distribution Board PVC Flush DIN Rail 8 Way | 1 | New DB board (replaces old board) | R269.95 |
+| 12 | Earth Leakage DIN Rail 63A Double Pole | 1 | Main earth leakage protection | R354.95 |
+| 13 | Circuit Breaker DIN Rail 10A | 1 | Lights circuit | R62.95 |
+| 14 | Circuit Breaker DIN Rail 20A | 3 | Plug circuits (×3) | R188.85 |
+| 15 | Circuit Breaker DIN Rail 40A | 1 | Stove circuit | R62.95 |
+| 16 | Circuit Breaker DIN Rail 32A | 1 | Geyser circuit (no 30A available) | R62.95 |
+
 ---
 
 ## Totals
 
 | | Amount |
 |---|--------|
-| Subtotal | ~R2,792.45 |
+| Paint & Prep Subtotal | ~R2,792.45 |
+| Electrical Subtotal | ~R1,002.60 |
 | Delivery | R200.00 |
-| **Total** | **~R2,992.45** |
+| **Total** | **~R3,995.05** |
 
 ---
 
