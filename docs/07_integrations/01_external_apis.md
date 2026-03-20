@@ -181,14 +181,27 @@ Create a local JSON product catalog seeded from existing Cashbuild cart data.
 
 ```json
 {
-  "sku": "CB-PVA-20L-WG",
-  "name": "Champion Extra Thick PVA 20L Winters Grey",
-  "category": "paint",
-  "price": 432.95,
-  "currency": "ZAR",
-  "unit": "each",
-  "store": "Cashbuild Kwa Thema",
-  "lastUpdated": "2026-03-20"
+  "catalog": {
+    "store": {
+      "name": "Cashbuild Kwa Thema",
+      "address": "Shop 7 Shoprite Shabangu Centre, ...",
+      "delivery": 200.0
+    },
+    "lastUpdated": "2026-03-20",
+    "currency": "ZAR",
+    "products": [
+      {
+        "id": 4,
+        "name": "Champion Extra Thick PVA 20L Winters Boy",
+        "category": "paint",
+        "subcategory": "pva",
+        "price": 429.95,
+        "unit": "each",
+        "volume": "20L",
+        "coverage": "Top coat — exterior + interior walls"
+      }
+    ]
+  }
 }
 ```
 
