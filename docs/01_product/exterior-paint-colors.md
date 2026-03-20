@@ -16,7 +16,7 @@ Interior is already painted in a modern grey palette (lightest grey walls, darke
 ## Paint Plan (Cashbuild Products)
 
 ### Exterior Plastered Walls (non-brick sections)
-- **First coat:** Mackay Contractor PVA 20L Light Grey (sealer)
+- **First coat:** Mackay Contractor PVA 20L White (sealer)
 - **Top coat:** Champion Extra Thick PVA 20L Winters Grey (x2 coats)
 - Face brick sections stay as-is — painting face brick peels
 
@@ -31,12 +31,12 @@ Interior is already painted in a modern grey palette (lightest grey walls, darke
 - **Broader waterproofing:** Powafix Powacoat 5L Charcoal over wider leak areas
 
 ### Bathroom Walls
-- **First coat:** Mackay Contractor PVA Light Grey (sealer)
+- **First coat:** Mackay Contractor PVA White (sealer)
 - **Top coat:** Champion Extra Thick PVA Winters Grey
 
 ### Bathroom Ceiling
-- **Shower ceiling:** Flexikote waterproofing first, then Mackay PVA Light Grey
-- **Non-shower ceiling:** Mackay PVA Light Grey only (lighter contrast vs walls)
+- **Shower ceiling:** Flexikote waterproofing first, then Mackay PVA White
+- **Non-shower ceiling:** Mackay PVA White only (matches rest of house ceilings)
 
 ### Shower Wet Zone (walls + ceiling)
 - **Waterproofing:** Duram Flexikote 5L + Mesh Grey (applied before paint/future tiling)
@@ -52,10 +52,10 @@ Interior is already painted in a modern grey palette (lightest grey walls, darke
 
 | Area | Product | Color |
 |------|---------|-------|
-| Exterior walls (first coat) | Mackay Contractor PVA 20L | Light Grey |
+| Exterior walls (first coat) | Mackay Contractor PVA 20L | White |
 | Exterior walls (top coat) | Champion Extra Thick PVA 20L | Winters Grey |
 | Bathroom walls | Same as exterior | Winters Grey |
-| Bathroom ceiling | Mackay PVA only (no top coat) | Light Grey |
+| Bathroom ceiling | Mackay PVA only (no top coat) | White |
 | Burglar bars | Champion Enamel 5L | Black |
 | Window frames | Champion Enamel 5L | White |
 | Roof leak (spot seal) | Flasharry Vala Inthonsi Kit 1L | — |
@@ -70,9 +70,9 @@ Interior is already painted in a modern grey palette (lightest grey walls, darke
 2. Fill cracks with Multi Filla, let dry, sand smooth
 3. Flasharry kit on specific leak cracks/joints, then Powacoat over wider roof leak areas
 4. Flexikote + mesh in shower area (walls + ceiling)
-5. Mackay PVA first coat on all walls (exterior + bathroom) and bathroom ceiling
+5. Mackay PVA White first coat on all walls (exterior + bathroom) and bathroom ceiling
 6. Champion Winters Grey top coat x2 on walls only (exterior + bathroom walls — NOT bathroom ceiling)
-7. Bathroom ceiling = Mackay Light Grey only (no top coat, lighter contrast)
+7. Bathroom ceiling = Mackay White only (no top coat, matches rest of house ceilings)
 8. Champion Enamel Black on burglar bars
 9. Champion Enamel White on window frames
 10. Clean brushes/rollers with thinners
