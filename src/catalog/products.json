@@ -137,6 +137,69 @@
         "price": 62.95,
         "unit": "each",
         "specs": "32A, 6kA, single pole, DIN rail mount"
+      },
+      {
+        "id": 16,
+        "name": "Afrisam All Purpose Cement 50KG",
+        "category": "concrete",
+        "subcategory": "cement",
+        "price": 109.95,
+        "unit": "each",
+        "specs": "50kg bag, CEM II 32.5R, general purpose"
+      },
+      {
+        "id": 17,
+        "name": "Building Sand 0.5 Cubic Metre",
+        "category": "concrete",
+        "subcategory": "sand",
+        "price": 449.95,
+        "unit": "each",
+        "specs": "0.5m³, washed plaster sand"
+      },
+      {
+        "id": 18,
+        "name": "19mm Concrete Stone 0.5 Cubic Metre",
+        "category": "concrete",
+        "subcategory": "stone",
+        "price": 529.95,
+        "unit": "each",
+        "specs": "0.5m³, 19mm crushed stone aggregate"
+      },
+      {
+        "id": 19,
+        "name": "Powafix Cement Colour 1KG Charcoal",
+        "category": "concrete",
+        "subcategory": "pigment",
+        "price": 89.95,
+        "unit": "each",
+        "specs": "1kg powder pigment, iron oxide, for concrete/mortar/plaster"
+      },
+      {
+        "id": 20,
+        "name": "Powafix Cement Colour 1KG Red",
+        "category": "concrete",
+        "subcategory": "pigment",
+        "price": 89.95,
+        "unit": "each",
+        "specs": "1kg powder pigment, iron oxide, for concrete/mortar/plaster"
+      },
+      {
+        "id": 21,
+        "name": "Powafix Cement Colour 1KG Brown",
+        "category": "concrete",
+        "subcategory": "pigment",
+        "price": 89.95,
+        "unit": "each",
+        "specs": "1kg powder pigment, iron oxide, for concrete/mortar/plaster"
+      },
+      {
+        "id": 22,
+        "name": "Powafix Cement Colour 500G Yellow",
+        "category": "concrete",
+        "subcategory": "pigment",
+        "price": 54.95,
+        "unit": "each",
+        "specs": "500g powder pigment, iron oxide, for concrete/mortar/plaster"
       }
     ]
   }
